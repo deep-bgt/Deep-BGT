@@ -42,7 +42,7 @@ If you make use of our implementation regarding the tagging scheme, please cite 
 - We cannot guarantee that the code works with different versions for Keras / Tensorflow.
 - We cannot provide the data used in the experiments in this code repository, because we have no right to distribute the corpora provided by PARSEME Shared Task Edition 1.1 .
 
-       1. Please download corpora from https://gitlab.com/parseme/sharedtask-data.
+       1. Please download corpora from https://gitlab.com/parseme/sharedtask-data
           Unzip the downloaded file
           Locate it into input/corpora
        2. All word embeddings are available in the https://github.com/facebookresearch/fastText/blob/master/docs/crawl-vectors.md
@@ -51,8 +51,9 @@ If you make use of our implementation regarding the tagging scheme, please cite 
           Hebrew (HE), Hindu (HI), Crotian (HR), Hungarian (HU), Italian (IT), Lithuanian (LT),
            Polish (PL), Portuguese (PT), Romanian (RO), Slovenian (SL), and Turkish (TR).
 
-Setup with virtual environment (Python 3):
+#### Setup with virtual environment (Python 3):
 -  python3 -m venv my_venv
+
    source my_venv/bin/activate
 - Install the requirements:
    pip3 install -r requirements.txt
