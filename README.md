@@ -42,41 +42,20 @@ If you make use of our implementation regarding the tagging scheme, please cite 
 - We cannot guarantee that the code works with different versions for Keras / Tensorflow.
 - We cannot provide the data used in the experiments in this code repository, because we have no right to distribute the corpora provided by PARSEME Shared Task Edition 1.1 .
 
-       1. Please download corpora by command " wget https://gitlab.com/parseme/sharedtask-data/-/archive/master/sharedtask-data-master.zip "
+       1. Please download corpora from https://gitlab.com/parseme/sharedtask-data.
           Unzip the downloaded file
-          Locate it into CICLing_42/input/corpora
-       2. All word embeddings are available in the following links:
-       
-            [BG](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.bg.300.vec.gz),
-            [DE](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.de.300.vec.gz),
-            [EL](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.el.300.vec.gz),
-            [EN](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.en.300.vec.gz),
-            [ES](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.es.300.vec.gz),
-            [EU](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.eu.300.vec.gz),
-            [FA](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.fa.300.vec.gz),
-            [FR](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.fr.300.vec.gz),
-            [HE](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.he.300.vec.gz),
-            [HI](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.hi.300.vec.gz),
-            [HR](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.hr.300.vec.gz),
-            [HU](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.hu.300.vec.gz),
-            [IT](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.it.300.vec.gz),
-            [LT](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.lt.300.vec.gz),
-            [PL](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.pl.300.vec.gz),
-            [PT](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.pt.300.vec.gz),
-            [RO](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.ro.300.vec.gz),
-            [SL](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.sl.300.vec.gz),
-            [TR](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.tr.300.vec.gz).
-          Download word embeddings by command " wget language_link "
-          Locate them into CICLing_42/input/embeddings
+          Locate it into input/corpora
+       2. All word embeddings are available in the https://github.com/facebookresearch/fastText/blob/master/docs/crawl-vectors.md
+          Download word embeddings and locate them into input/embeddings
        3. Language codes are Bulgarian (BG), German (DE), Greek (EL), English (EN), Spanish (ES), Basque (EU), Farsi (FA), French (FR),
           Hebrew (HE), Hindu (HI), Crotian (HR), Hungarian (HU), Italian (IT), Lithuanian (LT),
            Polish (PL), Portuguese (PT), Romanian (RO), Slovenian (SL), and Turkish (TR).
 
 Setup with virtual environment (Python 3):
--  python3 -m venv CICLing_42_venv
-   source CICLing_42_venv/bin/activate
+-  python3 -m venv my_venv
+   source my_venv/bin/activate
 - Install the requirements:
-   CICLing_42_venv/bin/pip3 install -r requirements.txt
+   pip3 install -r requirements.txt
 
 If everything works well, you can run the example usage described below.
 
@@ -85,18 +64,9 @@ If everything works well, you can run the example usage described below.
 - The following guide show an example usage of the model for English with bigappy-unicrossy tagging scheme.
 - Instructions
       
-      1. Download word embeddings: 
-         " wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/cc.en.300.vec.gz "
-         Locate it into CICLing_42/input/embeddings
-      2. Download the PARSEME Corpora:
-         " wget https://gitlab.com/parseme/sharedtask-data/-/archive/master/sharedtask-data-master.zip "
-         Unzip the downloaded file
-         Locate it into CICLing_42/input/corpora
-      3. Change directory to the location of the source code which is CICLing_42
-      4. Run the instructions in "Setup with virtual environment (Python 3)"
-      5. Run the command to train the model: python3 src/Runner.py -l EN -t gappy-crossy
+      1. Change directory to the location of the source code
+      2. Run the instructions in "Setup with virtual environment (Python 3)"
+      3. Run the command to train the model: python3 src/Runner.py -l EN -t gappy-crossy
          If you want to try the model with another configuration, change language code after -l, and tag after -t
          Languages: BG, DE, EL, EN, ES, EU, FA, FR, HE, HI HR, HU, LT, IT, PL, PT, RO, SL, TR
          Tags: IOB, gappy-1, gappy-crossy
-      6. Open the file in CICLing_42/eval.cmd, copy and run the command in this file to evaluate the accuracy
-      7. The results will be in CICLing_42/output/EN/eval.txt
