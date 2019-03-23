@@ -85,14 +85,16 @@ If everything works well, you can run the example usage described below.
 - The following guide show an example usage of the model for English with bigappy-unicrossy tagging scheme.
 - Instructions
       
-      1. Download word embeddings: " wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/cc.en.300.vec.gz "
+      1. Download word embeddings: 
+         " wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/cc.en.300.vec.gz "
          Locate it into CICLing_42/input/embeddings
-      2. Download the PARSEME Corpora: " wget https://gitlab.com/parseme/sharedtask-data/-/archive/master/sharedtask-data-master.zip "
+      2. Download the PARSEME Corpora:
+         " wget https://gitlab.com/parseme/sharedtask-data/-/archive/master/sharedtask-data-master.zip "
          Unzip the downloaded file
          Locate it into CICLing_42/input/corpora
       3. Change directory to the location of the source code which is CICLing_42
       4. Run the instructions in "Setup with virtual environment (Python 3)"
-      5. Run the command to train the model: python3 Runner.py -l EN -t gappy-crossy
+      5. Run the command to train the model: python3 src/Runner.py -l EN -t gappy-crossy
          If you want to try the model with another configuration, change language code after -l, and tag after -t
          Languages: BG, DE, EL, EN, ES, EU, FA, FR, HE, HI HR, HU, LT, IT, PL, PT, RO, SL, TR
          Tags: IOB, gappy-1, gappy-crossy
