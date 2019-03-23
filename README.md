@@ -36,15 +36,17 @@ If you make use of our implementation regarding the tagging scheme, please cite 
 
 ## Implementation
 
-Requirements
+### Requirements
 - Python 3.6
 - Keras 2.2.4 with Tensorflow 1.12.0, and keras-contrib==2.0.8
 - We cannot guarantee that the code works with different versions for Keras / Tensorflow.
 - We cannot provide the data used in the experiments in this code repository, because we have no right to distribute the corpora provided by PARSEME Shared Task Edition 1.1 .
+
        1. Please download corpora by command " wget https://gitlab.com/parseme/sharedtask-data/-/archive/master/sharedtask-data-master.zip "
           Unzip the downloaded file
           Locate it into CICLing_42/input/corpora
        2. All word embeddings are available in the following links:
+       
             [BG](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.bg.300.vec.gz),
             [DE](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.de.300.vec.gz),
             [EL](https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.el.300.vec.gz),
@@ -78,12 +80,11 @@ Setup with virtual environment (Python 3):
 
 If everything works well, you can run the example usage described below.
 
-Example Usage:
+
+### Example Usage:
 - The following guide show an example usage of the model for English with bigappy-unicrossy tagging scheme.
-- Running all experiments for 19 languages with the three different tagging schemes -IOB, gappy-1-level, and bigappy-unicrossy- takes at least one week.
-- Since English is one the smallest corpus, we choose this example to show our new tagging scheme.
-- Running this experiment will take approximately a few hours.
 - Instructions
+      
       1. Download word embeddings: " wget https://s3-us-west-1.amazonaws.com/fasttext-vectors/cc.en.300.vec.gz "
          Locate it into CICLing_42/input/embeddings
       2. Download the PARSEME Corpora: " wget https://gitlab.com/parseme/sharedtask-data/-/archive/master/sharedtask-data-master.zip "
